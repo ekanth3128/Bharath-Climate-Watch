@@ -1,0 +1,594 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="slider-wrap">
+    <div id="slider_1" class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="{{ url_for('static', filename='images/home011.jpg') }}" alt="img">
+            <div class="slider-content text-center">
+                <div class="container">
+                    <h3></h3>
+                    <h2>
+                        
+                        <br />
+                        
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="{{ url_for('static', filename='images/home_1_slider_2.jpg') }}" alt="img">
+            <div class="slider-content text-center">
+                <div class="container">
+                    <h3> </h3>
+                    <h2>
+                        B.C.W
+                        <br>
+                        Bharath Climate Watch
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="no-padding">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="statistics-wrapper" id="colorDiv" style="background-color: rgb(253, 255, 252);">
+                    <div class="statistics-box clearfix">
+                        <div class=" d-flex d-flex flex-row justify-content-center" style="display: flex;
+                        justify-content: space-evenly;
+                        padding: 30px; scale: 1.3;">
+                            <div class="btn btn-danger btn-lg" style="cursor: unset;">RED ZONE</div>
+                            <div class="btn btn-success btn-lg" style="cursor: unset;">GREEN ZONE</div>
+                            <div class="btn btn-warning btn-lg" style="cursor: unset;">ORANGE ZONE</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="statistics" style="background-color: rgb(255, 255, 255);">
+                                <center>
+                                    <div class="container-fluid">
+                                        <section class="main">
+                                            <section class="inputs"
+                                                style="padding: 20px; margin-bottom: 20px;">
+                                                <div class="row">
+
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Enter any city..." id="cityinput">
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        <input type="submit" value="Submit" id="convert"
+                                                            class="btn btn-primary" required_value=" enter a message" />
+                                                    </div>
+                                                </div>
+                                                <!-- <button placeholder="submit" id="add"></button><br><br> -->
+                                            </section>
+                                            <section class="display">
+                                                <div class="wrapper">
+                                                    <h4 id="cityoutput"></h4>
+                                                </div>
+                                            </section>
+                                        </section>
+                                    </div>
+                                </center>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="statistics" id="temp1" style="background-color: white;">
+                                    <center>
+                                        <h4 id="temp1">Temparature</h4>
+                                        <h4>
+                                            <p id="temp"></p>
+                                        </h4>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6 col-xs-12"">
+                                <div class=" statistics" id="wind1" style="background-color: white;">
+                                <center>
+                                    <h4 id="wind1">Wind Speed(Miles/hour)</h4>
+                                    <h4>
+                                        <p id="wind"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="statistics" id="humidity1" style="background-color: white;">
+                                <center>
+                                    <h4 id="colorDiv3" style="background-color: white;">
+                                        HUMIDITY(%)
+                                        <p id="humidity"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="statistics" id="Weather1" style="background-color: white;">
+                                <center>
+                                    <h4>Weather</h4>
+                                    <h4>
+                                        <p id="description"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+<!-- <div class="site-section stats">
+    <div class="container">
+        <div class="row" style="font-size: 14px;">
+
+            <div class="col-sm-4 ">
+                <div class="stat-card ">
+                    <div class="stat-card__content">
+                        <p class="text-uppercase mb-2 font-weight-normal">COUNTRY</p>
+                        <div>
+                            <h1 class="text-success font-weight-bold "></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="stat-card">
+                    <div class="stat-card__content">
+                        <p class="text-uppercase mb-2 font-weight-normal">NEW CONFIRMED</p>
+                        <div>
+                            <h1 class="text-primary font-weight-bold">0</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="stat-card">
+                    <div class="stat-card__content">
+                        <p class="text-uppercase mb-2 font-weight-normal">TOTAL CONFIRMED</p>
+                        <div>
+                            <h1 class="text-warning font-weight-bold">  0 </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="stat-card">
+                    <div class="stat-card__content">
+                        <p class="text-uppercase mb-2 font-weight-normal">NEW DEATHS</p>
+                        <div>
+                            <h1 class="text-secondary font-weight-bold"> 0 </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="stat-card pr-0">
+                    <div class="stat-card__content">
+                        <p class="text-uppercase mb-2 font-weight-normal">LAST UPDATED DATE</p>
+                        <div>
+                            <h1 class=" text-purple font-weight-bold ">  </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 ">
+                <div class="stat-card">
+                    <div class="stat-card__content">
+                        <p class="text-uppercase mb-2 font-weight-normal">TOTAL DEATHS</p>
+                        <div>
+                            <h1 class="text-success font-weight-bold"> 0 </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div> -->
+<section class="no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="statistics-wrapper" id="colorDiv" style="background-color:rgba(100, 97, 97, 0.445);">
+                    <div class="statistics-box clearfix">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="statistics" id="temp1" style="background-color:rgba(22, 233, 201, 0.848);">
+                                <center>
+                                    <h4>Temparature Section</h4>
+                                </center>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: red;">
+                                <center>
+                                    <h4>
+                                        <p id="t1"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color:rgba(100, 97,  97, 0.445);">
+                                <h4>
+                                    <p id="t1a"></p>
+                                </h4>
+                            </div>
+                            <div>
+                                <h4>
+                                    <p id="t1b"></p>
+                                </h4>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color:rgba(100, 97,  97, 0.445);">
+                                <h4>
+                                    <p id="t1c"></p>
+                                </h4>
+                            </div>
+                            <div>
+                                <h4>
+                                    <p id="t1d"></p>
+                                </h4>
+                                <h4>
+                                    <p id="t1e"></p>
+                                </h4>
+                                <h4>
+                                    <p id="t1f"></p>
+                                </h4>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: #ed7b08;">
+                                <center>
+                                    <h4>
+                                        <p id="t2"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: #08ed0b;">
+                                <center>
+                                    <h4>
+                                        <p id="t3"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="statistics" id="humidity1" style="background-color: rgba(22, 233, 201, 0.848);">
+                                <center>
+                                    <h4>HUMIDITY SECTION</h4>
+                                </center>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: red;">
+                                <center>
+                                    <h4>
+                                        <p id="h1"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color:rgba(100, 97,  97, 0.445);">
+                                <h4>
+                                    <p id="h1a"></p>
+                                </h4>
+                            </div>
+                            <div>
+                                <h4>
+                                    <p id="h1b"></p>
+                                </h4>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: rgba(100, 97,  97, 0.445);">
+                                <h4>
+                                    <p id="h1c"></p>
+                                </h4>
+                            </div>
+                            <div>
+                                <h4>
+                                    <p id="h1d"></p>
+                                </h4>
+                                <h4>
+                                    <p id="h1e"></p>
+                                </h4>
+                                <h4>
+                                    <p id="h1f"></p>
+                                </h4>
+                                <h4>
+                                    <p id="h1g"></p>
+                                </h4>
+                                <h4>
+                                    <p id="h1h"></p>
+                                </h4>
+                                <h4>
+                                    <p id="h1i"></p>
+                                </h4>
+                                <h4>
+                                    <p id="h1j"></p>
+                                </h4>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: #ed7b08;">
+                                <center>
+                                    <h4>
+                                        <p id="h2"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                            <div class="statistics" id="humidity1" style="background-color: #08ed0b;">
+                                <center>
+                                    <h4>
+                                        <p id="h3"></p>
+                                    </h4>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-content-block section-how-we-work">
+    <div class="container wow fadeInUp">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <h2 class="section-heading" id="graph-head"></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-lg-4" id="matplotlib-lineplot" style="display: flex"></div>
+            <div class=" col-lg-4" id="matplotlib-lineplot1"></div>
+            <div class="col-lg-4" id="matplotlib-lineplot2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <h2 class="section-heading" id="graph-head2"></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-lg-4" id="matplotlib-lineplota" style="display: flex"></div>
+            <div class=" col-lg-4" id="matplotlib-lineplota1"></div>
+            <div class="col-lg-4" id="matplotlib-lineplota2"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+                <h2 class="section-heading" id="graph-head3"></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class=" col-lg-4" id="matplotlib-lineplotb" style="display: flex"></div>
+            <div class=" col-lg-4" id="matplotlib-lineplotb1"></div>
+            <div class="col-lg-4" id="matplotlib-lineplotb2"></div>
+        </div>
+    </div>
+    <section class="section-content-block section-how-we-work">
+        <div class="container wow fadeInUp">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <h2 class="section-heading">Our Priorities</h2>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="service-block-bg xs-margin">
+                    <img src="{{ url_for('static', filename='images/highlight_1.jpg') }}" alt="serives">
+                    <h3>Stop Cutting Down Trees</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="service-block-bg xs-margin">
+                    <img src="{{ url_for('static', filename='images/highlight_2.jpg') }}" alt="serives">
+                    <h3>efficient in energy use</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="service-block-bg xs-margin">
+                    <img src="{{ url_for('static', filename='images/highlight_3.jpg') }}" alt="serives">
+                    <h3>Being water wise at home</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="service-block-bg xs-margin">
+                    <img src="{{ url_for('static', filename='images/highlight_4.jpg') }}" alt="serives">
+                    <h3>Preventing air pollution</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="service-block-bg xs-margin">
+                    <img src="{{ url_for('static', filename='images/highlight_5.jpg') }}" alt="serives">
+                    <h3>Reducing greenhouse gas</h3>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="service-block-bg xs-margin">
+                    <img src="{{ url_for('static', filename='images/highlight_6.jpg') }}" alt="serives">
+                    <h3>Recycling the Daily waste</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-content-block take-section section-secondary-bg">
+        <div class="container">
+            <div class="row">
+                <div class="take-action">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <div class="action-text">
+                            <h2 class="section-heading-inline">How to Create Natural Forest</h2>
+                            <p>Afforestation of Urban Areas with Natural Species and its Importance Polluters must quit
+                                debilitating the privileges of defense less groups and undermining atmosphere science
+                                and activity.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                        <figure class="action-img">
+                            <img src="{{ url_for('static', filename='images/3a.webp') }}" alt="Action_image" />
+                            <a class="video-play-icon" href="https://youtu.be/WAVZChi77zM">
+                                <i class="fa fa-caret-right"></i>
+                            </a>
+                        </figure>
+                        <div class="action-overlay-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-content-block event-section-1 section-secondary-bg">
+        <div class="container wow fadeInUp">
+            <div class="row section-heading-wrapper">
+                <div class="col-md-12 col-sm-12 text-center">
+                    <h2 class="section-heading">Upcoming Events</h2>
+                    <p class="section-subheading">
+                        Events Related To Climate Change
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="event_wrapper-1 xs-margin">
+                    <figure class="event-img">
+                        <img src="{{ url_for('static', filename='images/event_2.jpg') }}" alt="event" height="300"
+                            width="1200" />
+                    </figure>
+                    <div class="event-text">
+                        <span class="event-date">22 Mar 2023 </span>
+                        <h5><a href="#">Nature and biodiversity</a></h5>
+                        <p>From showcasing climate action to taking ambition to the next level, climate events provide
+                            space for knowledge exchange and discussions to strengthen the Paris Agreement’s
+                            implementation.</p>
+                        <p class="event-time"><i class="fa fa-clock-o"></i> 09:00 to 20:00</p>
+                        <p class="event-location"><i class="fa fa-map-marker"></i>New York, NY</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<footer>
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="footer-nav">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<a id="backTop">Back To Top</a>
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#convert').click(function () {
+            var format = /[ `1234567890!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            var citygiven = document.getElementById('cityinput').value;
+            if (citygiven == "") {
+                alert("Please enter a city name");
+            } else if ((format.test(citygiven))) {
+                alert("Please enter a city without special characters");
+            } else {
+                var text = $('#cityinput').val();
+                var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + text + '&appid=198700fd07cfb27eb62679f850c5d048';
+
+                fetch(url).then(res => {
+                    if (res['status'] == 404) {
+                        // console.log(res['status']);
+                        alert('please enter a valid city name')
+                    } else {
+                        $.get(url, function (data, status) {
+                            console.log(status);
+                            var cityText = 'Weather of ' + data.name + ', ' + data.sys.country + ' is ' + data.weather[0].main + ' with temperature ' + data.main.temp + ' K';
+                            var wind = data.wind.speed;
+                            var humid = data.main.humidity;
+                            $('#cityoutput').text(cityText);
+                            $('#wind').text(data.wind.speed);
+                            $('#description').text(data.weather[0].main);
+                            $('#humidity').text(data.main.humidity);
+                            var temp = data.main.temp - 273.15;
+                            temp = temp.toFixed(2);
+                            $('#temp').text(temp + ' °C');
+                            if (temp > 40 || wind > 20 || humid > 60) {
+                                $("#colorDiv").css("background-color", "red");
+                            } else if (temp > 30 || wind > 10 || humid > 50) {
+                                $("#colorDiv").css("background-color", "orange");
+                            } else {
+                                $("#colorDiv").css("background-color", "rgb(21, 255, 0)");
+                            }
+
+                            if (temp > 40) {
+                                $('#temp1').css('background-color', 'red');
+                                $('#t1').text('Extreme Temperature Zone');
+                                $('#t1a').text('EFFECTS ');
+                                $('#t1b').text('1. Heat Illeness 2.Respiratory Disease 3.Cardiovascular disease 4.Chronic disease ( Mental Health , Renal Disease )');
+                                $('#t1c').text('PREVENTION');
+                                $('#t1d').text('1 . Keep your home cool  , the room temperature should be kept below 32 °C during the day and 24 °C during the night.');
+                                $('#t1e').text('2. Drink plenty of water and avoid alcohol and caffeine.');
+                                $('#t1f').text('3. Wear loose, light-colored clothing.');
+                            } else if (temp > 30) {
+                                $('#temp1').css('background-color', 'orange');
+                                $('#t2').text('Modarate Temperature Zone, Stay Hydrated');
+                            } else {
+                                $('#temp1').css('background-color', 'rgb(21, 255, 0)');
+                                $('#t3').text('Cool Temperature Zone, Stay Hydrated');
+                            }
+
+                            if (wind > 40) {
+                                $('#wind1').css('background-color', 'red');
+                            } else if (wind > 20) {
+                                $('#wind1').css('background-color', 'orange');
+                            } else {
+                                $('#wind1').css('background-color', 'rgb(21, 255, 0)');
+                            }
+
+                            if (humid > 60) {
+                                $('#colorDiv3').css('background-color', 'red');
+                                $('#h1').text('Extreme Humidity Zone - Red Zone');
+                                $('#h1a').text('Effects  ');
+                                $('#h1b').text('1.Dehydration 2.Fatigue 3.Muscle cramps 4.Heat exhaustion 5.Fainting 6 . Heat Stroke');
+                                $('#h1c').text('Prevention');
+                                $('#h1d').text('1.Slow down - Strenuous physical activity should be reduced, eliminated, or rescheduled to the coolest time of the day.  ');
+                                $('#h1e').text('2.Avoid alcohol. Some studies have shown that drinking too much in hot weather increases your risk of dying.');
+                                $('#h1f').text('3.Be extremely careful about hot cars. Never leave anyone, especially children in a closed, parked vehicle. Don’t forget your pets either!');
+
+                            } else if (humid > 50) {
+                                $('#colorDiv3').css('background-color', 'Orange');
+                                $('#h2').text('moderate Zone - stay safe');
+                            } else {
+                                $('#colorDiv3').css('background-color', 'rgb(21, 255, 0)');
+                                $('#h3').text('safe zone ');
+                            }
+
+                            // Charts
+
+                        });
+
+                        $('#result').val(result);
+
+                    }
+                })
+
+
+            }
+        });
+
+    });
+
+</script>
+{% endblock scripts %}

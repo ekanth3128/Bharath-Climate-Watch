@@ -1,0 +1,82 @@
+{% extends "layout.html" %} {% block content %}
+<section class="page-header" data-stellar-background-ratio="0.1">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+        <h3>Contact Us</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-content-block section-contact-block">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 wow fadeInRight">
+        <div class="content-block">
+          <h2 class="contact-title">Contact us</h2>
+          <ul class="contact-info">
+            <li>
+              <span class="icon-container"><i class="fa fa-phone"></i></span>
+              <address><a href="#"> +91 99999 22222</a></address>
+            </li>
+            <li>
+              <span class="icon-container"><i class="fa fa-envelope"></i></span>
+              <address><a href="mailto:">ekanth3128@gmail.com</a></address>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <section class="section-content-block footer-widget-area-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-widget-area footer-about">
+            <div class="row">
+              <div class="footer-widget-area">
+                <div class="col-md-3">
+                  <div class="footer-logo">
+                    <img
+                      src="{{ url_for('static', filename='images/1a.png') }}"
+                      alt="Logo"
+                      width="205"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-9">
+                  <div class="contact-info footer-content">
+                    <p>
+                      Growing awareness and helping to save our planet what we
+                      want for our future.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="footer-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <div class="footer-nav">
+            <nav>
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+{% endblock content %}

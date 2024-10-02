@@ -1,0 +1,131 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="page-header" data-stellar-background-ratio="0.1">
+    <div class="container">
+         <div class="row">
+            <div class="col-sm-12 text-center">
+                <h3>
+                    Weather Forecasting
+                </h3>
+            </div>
+        </div> <!-- end .row  -->
+    </div> <!-- end .container  -->
+</section> <!-- end .page-header  -->
+<section class="no-padding">
+    <div class="container" >
+        <div class="row" >
+            <div class="col-md-12">
+                <div class="statistics-wrapper" id="colorDiv" style="background-color: rgb(157, 225, 20);">
+                    <div class="statistics-box clearfix" >
+                        <div class="statistics" id="temp1" style="background-color: rgb(254, 255, 253);">
+                            <div class="container-fluid">
+                                <section class="main">
+                                    <section class="inputs">
+                                        <center>
+                                            <h3 id="Para1">5 Days Weather Forecast</h3>
+                                            <p id="inputContainer">City: <input type="text" id="cityInput"></p>
+                                            <button type="button" onclick="GetInfo()">FORECAST</button>        
+                                            <h3 id="cityName">---Bengaluru---</h3>
+                                        </center>
+                                    </section>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-content-block section-secondary-bg">
+    <div id = "weatherContainer">
+        <div id="iconsContainer">
+            <div class="container-fluid ">
+                <div class="row no-padding-gallery">
+                    <div class="col-md-4 col-sm-12 gallery-container" id="Para1">
+                        <center>
+                            <div class = "icons">
+                                <div id="iconsContainer">    
+                                    <p class="weather" id="day1"></p>
+                                    <div class="image"><img src="{{ url_for('static', filename='images/dots.png') }}" class="imgClass" id="img1"></div>
+                                    <p class="minValues" id="day1Min">Loading...</p>
+                                    <p class="maxValues" id="day1Max">Loading...</p>
+                                    <p class="Humid" id="day1Humidity">Loading...</p>
+                                    <p class="Wind" id="day1Wind">Loading...</p>
+                                </div>
+                            </div>
+                        </center>
+                    </div><!-- end .col-sm-3  -->
+                    <div class="col-md-4 col-sm-12 gallery-container" id="Para2">
+                        <center>
+                            <div class = "icons" >
+                                <p class="weather" id="day2"></p>
+                                <div class="image"><img src="{{ url_for('static', filename='images/dots.png') }}" class="imgClass" id="img2"></div>
+                                <p class="minValues" id="day2Min">Loading...</p>
+                                <p class="maxValues" id="day2Max">Loading...</p>
+                                <p class="Humid" id="day2Humidity">Loading...</p>
+                                <p class="Wind" id="day2Wind">Loading...</p>
+                            </div>
+                        </center>
+                    </div><!-- end .col-sm-3  -->
+                    <div class="col-md-4 col-sm-12 gallery-container" id="Para3">
+                        <center>
+                            <div class = "icons">
+                                <p class="weather" id="day3"></p>
+                                <div class="image"><img src="{{ url_for('static', filename='images/dots.png') }}" class="imgClass" id="img3"></div>
+                                <p class="minValues" id="day3Min">Loading...</p>
+                                <p class="maxValues" id="day3Max">Loading...</p>
+                                <p class="Humid" id="day3Humidity">Loading...</p>
+                                <p class="Wind" id="day3Wind">Loading...</p>
+                            </div>
+                        </center>
+                    </div><!-- end .col-sm-3  -->
+                    <div class="col-md-4 col-sm-12 gallery-container" id="Para4">
+                        <center>
+                            <div class = "icons">
+                                <p class="weather" id="day4"></p>
+                                <div class="image"><img src="{{ url_for('static', filename='images/dots.png') }}" class="imgClass" id="img4"></div>
+                                <p class="minValues" id="day4Min">Loading...</p>
+                                <p class="maxValues" id="day4Max">Loading...</p>
+                                <p class="Humid" id="day4Humidity">Loading...</p>
+                                <p class="Wind" id="day4Wind">Loading...</p>
+                            </div>
+                        </center>
+                    </div><!-- end .col-sm-3  -->
+                    <div class="col-md-4 col-sm-12 gallery-container" id="Para5" >
+                        <center>
+                            <div class = "icons">
+                                <p class="weather" id="day5"></p>
+                                <div class="image"><img src="{{ url_for('static', filename='images/dots.png') }}" class="imgClass" id="img5"></div>
+                                <p class="minValues" id="day5Min">Loading...</p>
+                                <p class="maxValues" id="day5Max">Loading...</p>
+                                <p class="Humid" id="day5Humidity">Loading...</p>
+                                <p class="Wind" id="day5Wind">Loading...</p>
+                            </div>
+                        </center>   
+                    </div><!-- end .col-sm-3  -->
+                </div> <!-- end .row  -->
+            </div> <!-- end .container  -->
+        </div>
+    </div>
+</section> <!-- end .section-content-block  -->
+
+{% endblock content %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script type="text/javascript">
+    DefaultScreen();
+</script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.backTop.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/waypoints-sticky.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/venobox.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/custom-scripts.js') }}"></script>
+{% endblock scripts %}
